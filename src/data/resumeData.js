@@ -1,3 +1,5 @@
+import profilePhoto from '../assets/profile-photo.svg';
+
 export const profile = {
   name: 'G. Gopinath',
   title: 'PHP Developer & API Engineer',
@@ -5,6 +7,8 @@ export const profile = {
   phone: '+91 99658 34442',
   email: 'k2gsalem@gmail.com',
   availability: 'Open to backend, API engineering, and cloud-focused opportunities.',
+  headline: 'Building resilient APIs and modernizing legacy platforms with clean, scalable code.',
+  photo: profilePhoto,
 };
 
 export const professionalSummary =
@@ -27,10 +31,6 @@ export const coreSkills = [
     title: 'Cloud & DevOps',
     items: ['AWS (ECS, EC2, S3, EFS, Route 53, IAM)', 'Docker', 'Pulumi', 'GitLab CI/CD'],
   },
-  {
-    title: 'Tools',
-    items: ['Git', 'Postman', 'VS Code', 'Linux Administration'],
-  },
 ];
 
 export const experienceHighlights = [
@@ -44,10 +44,6 @@ export const experienceHighlights = [
   },
   {
     label: 'Node JS',
-    value: '1 year',
-  },
-  {
-    label: 'AWS Cloud Services',
     value: '1 year',
   },
   {

@@ -21,27 +21,43 @@ import {
 import './App.css';
 
 function App() {
+  const primaryHighlight = experienceHighlights[0];
+
   return (
     <div className="app">
       <header className="hero">
-        <div className="hero__text">
-          <p className="hero__eyebrow">Resume</p>
-          <h1>{profile.name}</h1>
-          <p className="hero__role">{profile.title}</p>
-          <p className="hero__location">
-            <FiMapPin aria-hidden="true" />
-            <span>{profile.location}</span>
-          </p>
+        <div className="hero__info">
+          <div>
+            <p className="hero__eyebrow">Resume</p>
+            <h1>{profile.name}</h1>
+            <p className="hero__role">{profile.title}</p>
+            <p className="hero__location">
+              <FiMapPin aria-hidden="true" />
+              <span>{profile.location}</span>
+            </p>
+          </div>
+          <div className="hero__contact">
+            <a className="hero__contact-link" href={`tel:${profile.phone.replace(/\s+/g, '')}`}>
+              <FiPhone aria-hidden="true" />
+              <span>{profile.phone}</span>
+            </a>
+            <a className="hero__contact-link" href={`mailto:${profile.email}`}>
+              <FiMail aria-hidden="true" />
+              <span>{profile.email}</span>
+            </a>
+          </div>
         </div>
-        <div className="hero__contact">
-          <a className="hero__contact-link" href={`tel:${profile.phone.replace(/\s+/g, '')}`}>
-            <FiPhone aria-hidden="true" />
-            <span>{profile.phone}</span>
-          </a>
-          <a className="hero__contact-link" href={`mailto:${profile.email}`}>
-            <FiMail aria-hidden="true" />
-            <span>{profile.email}</span>
-          </a>
+        <div className="hero__media">
+          <div className="hero__photo">
+            <img src={profile.photo} alt={`Portrait of ${profile.name}`} />
+          </div>
+          {profile.headline && <p className="hero__headline">{profile.headline}</p>}
+          {primaryHighlight && (
+            <div className="hero__badge" aria-label={`${primaryHighlight.value} in ${primaryHighlight.label}`}>
+              <span className="hero__badge-value">{primaryHighlight.value}</span>
+              <span className="hero__badge-label">{primaryHighlight.label}</span>
+            </div>
+          )}
         </div>
       </header>
 
