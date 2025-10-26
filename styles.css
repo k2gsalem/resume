@@ -1,0 +1,278 @@
+:root {
+  color-scheme: light;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --bg: #f5f7fb;
+  --text: #1f2933;
+  --muted: #52606d;
+  --accent: #2563eb;
+  --card-bg: #ffffff;
+  --border: rgba(82, 96, 109, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(15, 118, 110, 0.08)), var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  padding: 32px 16px;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--border);
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact span {
+  margin: 0 8px;
+  color: var(--muted);
+}
+
+.contact a:hover,
+.contact a:focus {
+  text-decoration: underline;
+}
+
+.headshot {
+  width: 120px;
+  height: 120px;
+  border-radius: 32px;
+  background: rgba(37, 99, 235, 0.12);
+  padding: 16px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 28px 32px;
+  border: 1px solid var(--border);
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.summary p {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.experience + .experience {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.experience__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.experience__header h3 {
+  font-size: 1.1rem;
+}
+
+.experience__meta {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.experience ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.pill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill-list li {
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--accent);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 720px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.skills-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.experience-summary {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  color: var(--muted);
+}
+
+@media (min-width: 640px) {
+  .experience-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.experience-summary strong {
+  color: var(--text);
+}
+
+.education h3 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.education p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.projects {
+  display: grid;
+  gap: 18px;
+  list-style: none;
+}
+
+.projects h3 {
+  font-size: 1.05rem;
+}
+
+.projects p {
+  color: var(--muted);
+}
+
+.personal-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--muted);
+}
+
+.personal-details strong {
+  color: var(--text);
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 24px 12px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .experience__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experience__meta {
+    align-self: flex-start;
+  }
+
+  .experience-summary {
+    grid-template-columns: none;
+  }
+}
