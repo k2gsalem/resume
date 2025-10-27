@@ -1,23 +1,15 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-export default defineConfig({
-  plugins: [react()],
-  base: '/resume/',   // 👈 must match your repo name
-  build: {
-    outDir: 'dist',
-  },
-})
+export default defineConfig(({ mode }) => {
+  const isProduction = mode === 'production';
 
-// import { defineConfig } from 'vite';
-// import react from '@vitejs/plugin-react';
-
-// // https://vitejs.dev/config/
-// export default defineConfig(({ mode }) => ({
-//   plugins: [react()],
-//   base: mode === 'production' ? '/resume/' : '/',
-//   build: {
-//     outDir: 'dist',
-//     sourcemap: true,
-//   },
-// }));
+  return {
+    plugins: [react()],
+    base: isProduction ? './' : '/',
+    build: {
+      outDir: 'dist',
+      sourcemap: true,
+    },
+  };
+});
