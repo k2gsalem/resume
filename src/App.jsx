@@ -51,13 +51,15 @@ function App() {
           <div className="hero__photo">
             <img src={profile.photo} alt={`Portrait of ${profile.name}`} />
           </div>
-          {profile.headline && <p className="hero__headline">{profile.headline}</p>}
-          {primaryHighlight && (
-            <div className="hero__badge" aria-label={`${primaryHighlight.value} in ${primaryHighlight.label}`}>
-              <span className="hero__badge-value">{primaryHighlight.value}</span>
-              <span className="hero__badge-label">{primaryHighlight.label}</span>
-            </div>
-          )}
+          <div className="hero__meta">
+            {profile.headline && <p className="hero__headline">{profile.headline}</p>}
+            {primaryHighlight && (
+              <p className="hero__tenure">
+                <span>{primaryHighlight.value}</span>
+                <span>{primaryHighlight.label}</span>
+              </p>
+            )}
+          </div>
         </div>
       </header>
 

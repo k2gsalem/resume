@@ -9,33 +9,20 @@
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+  grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
   align-items: center;
-  gap: 40px;
-  padding: 52px 48px;
-  border-radius: 36px;
-  background: linear-gradient(135deg, #0f172a 0%, #1f2937 45%, #312e81 100%);
+  gap: 24px;
+  padding: 28px 24px;
+  border-radius: 24px;
+  background: #0f172a;
   color: #f8fafc;
-  box-shadow: 0 32px 70px -32px rgba(15, 23, 42, 0.6);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 85% 15%, rgba(236, 72, 153, 0.18), transparent 50%),
-    radial-gradient(circle at 15% 85%, rgba(59, 130, 246, 0.2), transparent 55%);
-  pointer-events: none;
+  border: 1px solid rgba(148, 163, 184, 0.12);
 }
 
 .hero__info {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .hero__eyebrow {
@@ -48,7 +35,7 @@
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
   letter-spacing: -0.03em;
 }
 
@@ -74,50 +61,45 @@
 .hero__contact {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
 }
 
 .hero__contact-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 22px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.55);
-  color: #f8fafc;
+  gap: 8px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(248, 250, 252, 0.92);
   text-decoration: none;
-  font-weight: 600;
-  border: 1px solid rgba(248, 250, 252, 0.18);
-  transition: background-color 200ms ease, transform 200ms ease, border-color 200ms ease;
+  font-weight: 500;
+  border: none;
+  transition: color 200ms ease;
 }
 
 .hero__contact-link svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .hero__contact-link:hover {
-  background: rgba(37, 99, 235, 0.82);
-  border-color: rgba(248, 250, 252, 0.3);
-  transform: translateY(-2px);
+  color: #60a5fa;
 }
 
 .hero__media {
-  position: relative;
-  z-index: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
 .hero__photo {
-  width: clamp(200px, 26vw, 240px);
+  width: clamp(140px, 18vw, 180px);
   aspect-ratio: 1;
   padding: 6px;
-  border-radius: 28px;
-  background: linear-gradient(135deg, rgba(236, 72, 153, 0.4), rgba(59, 130, 246, 0.4));
-  box-shadow: 0 22px 50px -28px rgba(15, 23, 42, 0.7);
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,38 +109,39 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 22px;
-  background: #0f172a;
+  border-radius: 14px;
+}
+
+.hero__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: rgba(248, 250, 252, 0.86);
 }
 
 .hero__headline {
   margin: 0;
-  text-align: center;
-  font-size: 1.05rem;
-  color: rgba(248, 250, 252, 0.88);
-  max-width: 280px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 260px;
 }
 
-.hero__badge {
+.hero__tenure {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 4px;
-  padding: 14px 24px;
-  border-radius: 18px;
-  background: rgba(15, 23, 42, 0.55);
-  border: 1px solid rgba(248, 250, 252, 0.18);
-  text-align: center;
-}
-
-.hero__badge-value {
-  font-size: 1.35rem;
-  font-weight: 700;
-}
-
-.hero__badge-label {
   font-size: 0.9rem;
-  color: rgba(248, 250, 252, 0.75);
+}
+
+.hero__tenure span:first-child {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #bfdbfe;
+}
+
+.hero__tenure span:last-child {
+  color: rgba(248, 250, 252, 0.7);
 }
 
 .content {
@@ -315,6 +298,16 @@
   .hero__contact {
     justify-content: center;
   }
+
+  .hero__media {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero__meta {
+    align-items: center;
+    text-align: center;
+  }
 }
 
 @media (max-width: 720px) {
@@ -323,7 +316,7 @@
   }
 
   .hero {
-    padding: 36px 28px;
+    padding: 24px 20px;
     border-radius: 28px;
   }
 
