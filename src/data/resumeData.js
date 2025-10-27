@@ -1,5 +1,3 @@
-import profilePhoto from '../assets/profile-photo.svg';
-
 export const profile = {
   name: 'G. Gopinath',
   title: 'PHP Developer & API Engineer',
@@ -8,7 +6,7 @@ export const profile = {
   email: 'k2gsalem@gmail.com',
   availability: 'Open to backend, API engineering, and cloud-focused opportunities.',
   headline: 'Building resilient APIs and modernizing legacy platforms with clean, scalable code.',
-  photo: profilePhoto,
+  photo: '/profile.jpg',
 };
 
 export const professionalSummary =
