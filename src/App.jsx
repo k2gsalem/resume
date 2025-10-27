@@ -1,12 +1,4 @@
-import {
-  FiMail,
-  FiPhone,
-  FiMapPin,
-  FiUser,
-  FiLayers,
-  FiBriefcase,
-  FiAward,
-} from 'react-icons/fi';
+import { FiMail, FiLinkedin, FiMapPin, FiUser, FiLayers, FiBriefcase, FiAward } from 'react-icons/fi';
 import SectionCard from './components/SectionCard.jsx';
 import ExperienceCard from './components/ExperienceCard.jsx';
 import {
@@ -37,9 +29,9 @@ function App() {
             </p>
           </div>
           <div className="hero__contact">
-            <a className="hero__contact-link" href={`tel:${profile.phone.replace(/\s+/g, '')}`}>
-              <FiPhone aria-hidden="true" />
-              <span>{profile.phone}</span>
+            <a className="hero__contact-link" href={profile.linkedin} target="_blank" rel="noreferrer">
+              <FiLinkedin aria-hidden="true" />
+              <span>LinkedIn</span>
             </a>
             <a className="hero__contact-link" href={`mailto:${profile.email}`}>
               <FiMail aria-hidden="true" />
