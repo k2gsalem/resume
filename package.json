@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "homepage": "http://k2gsalem.github.io/resume",
+  "homepage": "https://k2gsalem.github.io/resume",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
