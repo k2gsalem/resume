@@ -1,4 +1,4 @@
-import profilePhoto from '../assets/gopi.jpeg';
+import profilePhoto from '../assets/gopi.png';
 
 export const profile = {
   name: 'G. Gopinath',
