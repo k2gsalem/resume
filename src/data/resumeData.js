@@ -8,7 +8,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/k2gsalem/',
   availability: 'Open to backend, API engineering, and cloud-focused opportunities.',
   headline: 'Building resilient APIs and modernizing legacy platforms with clean, scalable code.',
-  photo: profilePhoto,
+    photo: profilePhoto,
 };
 
 export const professionalSummary =
