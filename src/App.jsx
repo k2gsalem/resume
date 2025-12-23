@@ -100,30 +100,36 @@ function App() {
           </div>
         </SectionCard>
 
-        <div className="content__split">
-          <SectionCard title="Education" icon={FiAward}>
-            <div className="education">
-              {education.map((item) => (
-                <div key={item.degree} className="education__item">
-                  <h3>{item.degree}</h3>
-                  <p>{item.institution}</p>
-                  <p className="education__details">{item.details}</p>
+        {(education.length > 0 || personalDetails.length > 0) && (
+          <div className="content__split">
+            {education.length > 0 && (
+              <SectionCard title="Education" icon={FiAward}>
+                <div className="education">
+                  {education.map((item) => (
+                    <div key={item.degree} className="education__item">
+                      <h3>{item.degree}</h3>
+                      <p>{item.institution}</p>
+                      <p className="education__details">{item.details}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </SectionCard>
+              </SectionCard>
+            )}
 
-          <SectionCard title="Personal Details" icon={FiUser}>
-            <ul className="personal-details">
-              {personalDetails.map((detail) => (
-                <li key={detail.label}>
-                  <span>{detail.label}</span>
-                  <strong>{detail.value}</strong>
-                </li>
-              ))}
-            </ul>
-          </SectionCard>
-        </div>
+            {personalDetails.length > 0 && (
+              <SectionCard title="Personal Details" icon={FiUser}>
+                <ul className="personal-details">
+                  {personalDetails.map((detail) => (
+                    <li key={detail.label}>
+                      <span>{detail.label}</span>
+                      <strong>{detail.value}</strong>
+                    </li>
+                  ))}
+                </ul>
+              </SectionCard>
+            )}
+          </div>
+        )}
       </main>
 
       <footer className="footer">
